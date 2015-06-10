@@ -53,7 +53,7 @@ var App = React.createClass({
 
 		var handler = this.getRouteHandler();
 		// If there is nothing to fetch return
-		if( !handler || !handler.prototype.fetch )
+		if( !handler || !handler.deps )
 			return;
 
 		// We are going to fetch data
@@ -61,7 +61,7 @@ var App = React.createClass({
 
 		var me = this,
 			router = this.context.router,
-			handlerDeps = handler.prototype.fetch( router.getCurrentParams(), router.getCurrentQuery() )
+			handlerDeps = handler.deps( router.getCurrentParams(), router.getCurrentQuery() )
 		;
 
 		this.fetch( handlerDeps )

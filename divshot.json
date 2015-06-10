@@ -1,0 +1,11 @@
+{
+	"name": "react-declarative-fetching",
+	"routes": {
+		"/*": "index.html"
+	},
+	"exclude": [
+		"node_modules",
+		"src",
+		"ci"
+	]
+}

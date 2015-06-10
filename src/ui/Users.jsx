@@ -4,10 +4,10 @@ var React = require('react'),
 ;
 
 var Users = React.createClass({
-	fetch: function( params ){
-		return {
-			users: '/users'
-		};
+	statics: {
+		deps: function(){
+			return { users: '/users' };
+		}
 	},
 
 	render: function() {

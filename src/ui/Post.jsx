@@ -3,10 +3,10 @@ var React = require('react'),
 ;
 
 var Post = React.createClass({
-	fetch: function( params ){
-		return {
-			post: '/posts/' + params.id
-		};
+	statics: {
+		deps: function( params ){
+			return { post: '/posts/' + params.id };
+		}
 	},
 
 	render: function() {

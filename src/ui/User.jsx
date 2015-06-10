@@ -4,11 +4,13 @@ var React = require('react'),
 ;
 
 var User = React.createClass({
-	fetch: function( params ){
-		return {
-			user: '/users/' + params.id,
-			posts: '/posts?userId=' + params.id
-		};
+	statics: {
+		deps: function( params ){
+			return {
+				user: '/users/' + params.id,
+				posts: '/posts?userId=' + params.id
+			};
+		}
 	},
 
 	render: function() {

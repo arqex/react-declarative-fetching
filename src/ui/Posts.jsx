@@ -4,8 +4,10 @@ var React = require('react'),
 ;
 
 var Posts = React.createClass({
-	fetch: function(){
-		return { posts: '/posts' };
+	statics: {
+		deps: function(){
+			return { posts: '/posts' };
+		}
 	},
 
 	render: function() {
