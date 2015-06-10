@@ -1,0 +1,104 @@
+
+/* JSON Editor */
+.jsonEditor * {
+	vertical-align: top;
+}
+
+.jsonChildren {
+  margin-left: 20px;
+  display: none;
+  font-weight: normal;
+  border-left: 1px dotted #ddd;
+}
+.jsonCompound.open > .jsonChildren {
+  display: block;
+}
+.jsonFieldAdder {
+  margin-left: 13px;
+}
+.jsonFieldAdder select {
+  margin-left: 5px;
+}
+.compoundToggle:before {
+  content: '▸';
+  color: #333;
+  line-height: 1em;
+  margin-right: 3px;
+}
+.open > .compoundToggle:before {
+  content: '▾';
+}
+
+.jsonName {
+  font-style: italic;
+  text-align: right;
+}
+
+.jsonValue {
+  margin-left: 5px;
+}
+
+.jsonValue > input,
+.jsonValue > textarea,
+.jsonValue > select {
+	margin-bottom: 5px;
+}
+
+.jsonRemove, .jsonFixed {
+  visibility: hidden;
+  margin-right: 5px;
+  text-decoration: none;
+  width: .6em;
+  display: inline-block;
+}
+
+.jsonName:hover > .jsonRemove {
+  visibility: visible;
+}
+pre {
+  background: #eee;
+  border: 1px solid #ddd;
+  padding: 5px;
+  float: left;
+  width: 180px;
+  margin: 0 10px 0 0;
+}
+
+.compoundToggle, .jsonString{
+  cursor: pointer;
+}
+
+.booleanField * {
+	vertical-align: middle;
+}
+
+.booleanField input {
+	margin-bottom: 0;
+}
+
+.jsonError > .jsonName,
+.jsonError .jsonErrorMsg {
+	color: #f36;
+}
+
+.jsonError .jsonErrorMsg {
+	margin: 0 0 10px 10px;
+	font-size: 0.9em;
+	vertical-align: bottom;
+	display: block;
+}
+
+.jsonError > .jsonValue > input,
+.jsonError > .jsonValue > select,
+.jsonError > .jsonValue > textarea {
+	background-color: #fff8f8;
+}
+
+.jsonNovalue {
+	color: #999;
+	font-style: italic;
+}
+
+.jsonGroup {
+	margin-bottom: 10px;
+}

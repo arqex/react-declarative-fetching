@@ -1,0 +1,113 @@
+.header {
+	color: #fff;
+	background: #496;
+	padding: 100px 10px 0 10px;
+	box-shadow: 0 2px 2px rgba(0,0,0,.1);
+}
+
+.wrapper {
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+.menu {
+	list-style: none;
+	padding: 0;
+	li {
+		display: inline-block;
+		a {
+			display: inline-block;
+			padding: 5px 20px;
+			color: #fff;
+			text-decoration: none;
+
+			&:hover {
+				color: #ff0;
+			}
+
+			&.active {
+				background: rgba(0,0,0,.2);
+			}
+		}
+	}
+}
+
+.content {
+	color: #333;
+	padding: 20px 0 60px;
+}
+
+footer {
+	background: #f9f9f9;
+	padding: 20px;
+	text-align: center;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
+	position: fixed;
+	bottom:0;
+	left: 0;
+	width: 100%;
+}
+
+h1,h2 {
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 1.8em;
+}
+
+div {
+	margin-bottom: 20px;
+}
+
+a {
+	color: #2a4;
+	text-decoration: none;
+	&:hover {
+		color: #d25;
+	}
+}
+
+textarea {
+	width: 100%;
+	height: 100px;
+}
+
+.userPosts {
+	margin-top: 50px;
+}
+
+table {
+	width: 100%;
+}
+
+thead {
+	border-bottom: 1px solid #eee;
+}
+th {
+	text-align: left;
+}
+td, th {
+	padding: 5px;
+}
+
+
+/* react json */
+
+.jsonEditor > .jsonObject > .jsonChildren {
+	border-left: 0;
+	padding-top: 0;
+}
+
+.jsonChildren {
+	padding-top: 10px;
+}
+
+.jsonName {
+	font-weight: bold;
+}
+
+.stringField input {
+	width: 350px;
+}
+
