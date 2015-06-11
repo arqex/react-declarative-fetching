@@ -14,7 +14,14 @@ var App = React.createClass({
 	},
 
 	getInitialState: function(){
-		return { loadingDeps: false, currentPath: false, handlerDeps: {} };
+		return {
+			// Last URL loaded
+			currentPath: false,
+			// Whenever it is fetching dependencies
+			loadingDeps: false,
+			// Fetched data for the current route component
+			handlerDeps: {}
+		};
 	},
 
 	render: function() {
@@ -29,27 +36,33 @@ var App = React.createClass({
 				<div className="content wrapper">
 				{ handler }
 				</div>
-				<footer>By <a href="#">arqex</a>. <a href="#">Fork it on Github</a></footer>
+				<footer>By <a target="_blank" href="http://arqex.com/1058/define-the-data-to-fetch-declaratively-with-react">arqex</a>. <a target="_blank" href="https://github.com/arqex/react-declarative-fetching">Fork it on Github</a></footer>
 			</div>
 		);
 	},
 
 	componentWillMount: function(){
-		this.fetchDependencies();
+		if( this.isURLChanged() ){
+			this.fetchDependencies();
+		}
 	},
 
 	componentWillReceiveProps: function( nextProps, nextState, context ){
-		this.fetchDependencies();
+		if( this.isURLChanged() ){
+			this.fetchDependencies();
+		}
+	},
+
+	isURLChanged: function(){
+		return this.context.router.getCurrentPath() !== this.state.currentPath;
 	},
 
 	fetchDependencies: function(){
-		var currentPath = this.context.router.getCurrentPath();
-
-		if( this.state.currentPath == currentPath )
-			return;
-
 		// We are going to refresh the dependencies
-		this.setState({ currentPath: currentPath, handlerDeps: {}  });
+		this.setState({
+			currentPath: this.context.router.getCurrentPath(),
+			handlerDeps: {}
+		});
 
 		var handler = this.getRouteHandler();
 		// If there is nothing to fetch return
@@ -89,7 +102,7 @@ var App = React.createClass({
 		while( currentRoutes[ i ].handler !== this.constructor )
 			i++;
 
-		// Return the next handler,our child
+		// Return the next handler, our child
 		return currentRoutes[ i + 1 ].handler;
 	},
 

@@ -22,7 +22,6 @@
     "postcss-loader": "^0.3.0",
     "q": "^1.4.1",
     "qajax": "^1.3.0",
-    "qwest": "^1.7.0",
     "react": "^0.13.1",
     "react-hot-loader": "^1.2.7",
     "react-json": "0.0.1",

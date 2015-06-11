@@ -1,7 +1,9 @@
 {
 	"name": "react-declarative-fetching",
 	"routes": {
-		"/*": "index.html"
+		"/*": "index.html",
+		"/user/*": "index.html",
+		"/post/*": "index.html"
 	},
 	"exclude": [
 		"node_modules",
