@@ -9,6 +9,6 @@ require('./style.scss');
 Router.run( routes, Router.HistoryLocation, function( Handler ){
 	React.render(
 		React.createElement( Handler ),
-		document.body
+		document.getElementById('app')
 	);
 });
